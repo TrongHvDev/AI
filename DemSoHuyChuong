@@ -1,79 +1,10 @@
-{
-  "nbformat": 4,
-  "nbformat_minor": 0,
-  "metadata": {
-    "colab": {
-      "provenance": [],
-      "toc_visible": true,
-      "authorship_tag": "ABX9TyOEwrgqYATuACmlDR99E6X2",
-      "include_colab_link": true
-    },
-    "kernelspec": {
-      "name": "python3",
-      "display_name": "Python 3"
-    },
-    "language_info": {
-      "name": "python"
-    }
-  },
-  "cells": [
-    {
-      "cell_type": "markdown",
-      "metadata": {
-        "id": "view-in-github",
-        "colab_type": "text"
-      },
-      "source": [
-        "<a href=\"https://colab.research.google.com/github/TrongHvDev/TrongHvDev/blob/main/DemSoHuyChuong\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
-      ]
-    },
-    {
-      "cell_type": "code",
-      "execution_count": 1,
-      "metadata": {
-        "colab": {
-          "base_uri": "https://localhost:8080/"
-        },
-        "id": "adKXzBqEwQR1",
-        "outputId": "a912fef6-776d-4a47-c379-b60dfc3dd4d8"
-      },
-      "outputs": [
-        {
-          "output_type": "stream",
-          "name": "stdout",
-          "text": [
-            "Số huy chương vàng Nhật đạt được:  Year            9\n",
-            "City            9\n",
-            "Sport           9\n",
-            "Discipline      9\n",
-            "NOC             9\n",
-            "Event           9\n",
-            "Event gender    9\n",
-            "Medal           9\n",
-            "dtype: int64\n",
-            "Số huy chương Nhật đạt được:  Year            32\n",
-            "City            32\n",
-            "Sport           32\n",
-            "Discipline      32\n",
-            "NOC             32\n",
-            "Event           32\n",
-            "Event gender    32\n",
-            "Medal           32\n",
-            "dtype: int64\n"
-          ]
-        }
-      ],
-      "source": [
-        "import pandas as pd\n",
-        "import numpy as np\n",
-        "url = 'http://winterolympicsmedals.com/medals.csv'\n",
-        "data = pd.read_csv(url)\n",
-        "data\n",
-        "print('Số huy chương vàng Nhật đạt được: ',data[(data['NOC']=='JPN')&(data['Medal']=='Gold')].count())\n",
-        "data=data.set_index(data['NOC'])\n",
-        "data.loc['JPN']\n",
-        "print('Số huy chương Nhật đạt được: ',data[(data['NOC']=='JPN')&(data['Medal'])].count())"
-      ]
-    }
-  ]
-}
+
+"import pandas as pd\n",
+"import numpy as np\n",
+"url = 'http://winterolympicsmedals.com/medals.csv'\n",
+"data = pd.read_csv(url)\n",
+"data\n",
+"print('Số huy chương vàng Nhật đạt được: ',data[(data['NOC']=='JPN')&(data['Medal']=='Gold')].count())\n",
+"data=data.set_index(data['NOC'])\n",
+"data.loc['JPN']\n",
+"print('Số huy chương Nhật đạt được: ',data[(data['NOC']=='JPN')&(data['Medal'])].count())"
